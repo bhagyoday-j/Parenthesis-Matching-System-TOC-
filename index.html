@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parenthesis Matching System using CFG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Parenthesis Matching System</h1>
+
+        <p class="subtitle">
+            Context-Free Grammar (CFG) Based Delimiter Validator
+        </p>
+
+        <div class="cfg-box">
+            <h2>CFG Rules</h2>
+
+            <pre>
+S → SS
+S → (S)
+S → [S]
+S → {S}
+S → ε
+            </pre>
+        </div>
+
+        <div class="input-section">
+            <input
+                type="text"
+                id="expression"
+                placeholder="Enter expression e.g. ({[]})"
+            >
+
+            <button onclick="checkExpression()">
+                Check Expression
+            </button>
+        </div>
+
+        <div id="result"></div>
+
+        <div class="steps">
+            <h2>Parser Trace</h2>
+            <table id="traceTable">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Action</th>
+                        <th>Stack</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
